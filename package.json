@@ -8,6 +8,8 @@
     "discord.io": "^2.5.3",
     "discord.js": "^11.3.0",
     "ffmpeg-binaries": "^3.2.2-3",
+    "node-opus": "^0.2.7",
+    "windows-build-tools": "^2.2.1",
     "ytdl-core": "^0.20.1"
   }
 }

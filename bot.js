@@ -1,10 +1,7 @@
 const Discord = require('discord.js');
-//var auth = require('./auth.json');
 const bot = new Discord.Client({});
 const auth=require("./auth.json");
 const prefix = "!";
-const yt = require('ytdl-core');
-const streamOptions = { seek : 0, volume : 1};
 
 bot.on("ready", ()=>{
 	bot.user.setGame('with buckets');
@@ -17,9 +14,9 @@ bot.on("message", async message => {
 	const arg = message.content.substring().trim();
  	const command = args.shift().toLowerCase();
 
- 	if(command=="test"){
- 		message.channel.send("Test successful. Csdbongratulations, you done did a thing.");
- 	}
+ 	// if(command=="test"){
+ 	// 	message.channel.send("Test successful. Congratulations, you done did a thing.");
+ 	// }
  	if(command=="ducat"){
  		message.channel.send("$148.67");
  	}
@@ -30,17 +27,15 @@ bot.on("message", async message => {
  		let value = arg*148.67;
  		message.channel.send("$" + value);
  	}
- 	if(command=="shutup"){
- 		message.member.voiceChannel.join().then(connection => {});
- 		//const dispatcher = connection.play(yt("https://www.youtube.com/watch?v=PuhOtBcw5_E", { audioonly: true }));
- 		//connection.play(ytdl("https://www.youtube.com/watch?v=PuhOtBcw5_E",{ filter: "audioonly" }));
+ 	if(command=="shutup" || command=="shutUpPlease"){
+ 		message.member.voiceChannel.join().then(connection => {
+			const dispatcher = connection.playFile('hammidshutup.mp3');
+		 });
  		
-		//const stream = yt('https://www.youtube.com/watch?v=PuhOtBcw5_E', {filter : 'audioonly'});
-        //const dispatcher = connection.playStream(stream, streamOptions);
-		const dispatcher = connection.playFile('hammidshutup.mp3');
-		//bot.voiceConnection.playSound(stream);
-
- 	}
+	 }
+	//  if(command=="leave"){
+	// 	bot.voiceChannel.leave();
+	//  }
 
 
 })
