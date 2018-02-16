@@ -31,11 +31,14 @@ bot.on("message", async message => {
  		message.channel.send("$" + value);
  	}
  	if(command=="shutup"){
- 		const connection = await message.member.voiceChannel.join();
+ 		message.member.voiceChannel.join().then(connection => {});
  		//const dispatcher = connection.play(yt("https://www.youtube.com/watch?v=PuhOtBcw5_E", { audioonly: true }));
  		//connection.play(ytdl("https://www.youtube.com/watch?v=PuhOtBcw5_E",{ filter: "audioonly" }));
- 		const stream = yt('https://www.youtube.com/watch?v=PuhOtBcw5_E', {filter : 'audioonly'});
-        const dispatcher = connection.playStream(stream, streamOptions);
+ 		
+		//const stream = yt('https://www.youtube.com/watch?v=PuhOtBcw5_E', {filter : 'audioonly'});
+        //const dispatcher = connection.playStream(stream, streamOptions);
+		const dispatcher = connection.playFile('hammidshutup.mp3');
+		//bot.voiceConnection.playSound(stream);
 
  	}
 
