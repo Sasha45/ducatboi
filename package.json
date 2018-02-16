@@ -1,0 +1,13 @@
+{
+  "name": "ducat boi",
+  "version": "1.0.0",
+  "description": "your local ducat expert",
+  "main": "bot.js",
+  "author": "Beridian",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "discord.js": "^11.3.0",
+    "ffmpeg-binaries": "^3.2.2-3",
+    "ytdl-core": "^0.20.1"
+  }
+}
