@@ -4,7 +4,8 @@ const auth=require("./auth.json");
 const prefix = "!";
 
 bot.on("ready", ()=>{
-	bot.user.setGame('with buckets');
+	//bot.user.setGame('with buckets');
+	bot.user.setPresence({game:{name:"clinking coin sounds", type:"LISTENING"}});
 });
 
 bot.on("message", async message => {
@@ -22,7 +23,10 @@ bot.on("message", async message => {
  	}
  	if(command=="bucket"){
  		message.channel.send("$21,781.42");
- 	}
+	}
+	if(command=="ducatsinabucket"){
+		message.channel.send("There are 146.51 ducats in a bucket.")
+	}
  	if(command=="toDollars"){
  		let value = arg*148.67;
  		message.channel.send("$" + value);
@@ -33,9 +37,11 @@ bot.on("message", async message => {
 		 });
  		
 	 }
-	//  if(command=="leave"){
-	// 	bot.voiceChannel.leave();
-	//  }
+	if(command=="orca"){
+	}
+	 if(command=="leave"){
+		bot.voiceChannel.leave();
+	 }
 
 
 })
